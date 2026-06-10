@@ -6,7 +6,7 @@
     "dev": "vite --host 127.0.0.1 --port 1420",
     "build": "vite build",
     "preview": "vite preview",
-    "tauri:build": "tauri build --bundles dmg"
+    "tauri:build": "cd .. && PATH=\"$HOME/.cargo/bin:$PATH\" ./ui/node_modules/.bin/tauri build --bundles dmg"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.0.0",
