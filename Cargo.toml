@@ -2,6 +2,7 @@
 members = [
   "crates/envpilot-core",
   "crates/envpilot-cli",
+  "src-tauri",
 ]
 resolver = "2"
 

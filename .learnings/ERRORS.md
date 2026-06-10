@@ -12,11 +12,12 @@ Command failures and integration errors.
 **Area**: infra
 
 ### Summary
-`cargo check --workspace` could not run because `cargo` was not found in the current shell.
+`cargo check --workspace` could not run because Cargo is not available through the current PATH, and the rustup shim has no default toolchain configured.
 
 ### Error
 ```text
 zsh:1: command not found: cargo
+error: rustup could not choose a version of cargo to run, because one wasn't specified explicitly, and no default is configured.
 ```
 
 ### Context
@@ -25,7 +26,7 @@ zsh:1: command not found: cargo
 - The project is being scaffolded as a Rust workspace, so Cargo is required for verification.
 
 ### Suggested Fix
-Install Rust with rustup or provide a shell PATH that includes Cargo, then rerun `cargo check --workspace` and `cargo test --workspace`.
+Install Rust with rustup, run `rustup default stable`, or provide a shell PATH/toolchain that includes Cargo, then rerun `cargo check --workspace` and `cargo test --workspace`.
 
 ### Metadata
 - Reproducible: yes
