@@ -34,7 +34,7 @@ fn redact_line(line: &str) -> String {
     if let Some(index) = line.find('=') {
         let key = line[..index].trim();
         if is_sensitive_key(key) {
-            return format!("{}= \"{}\"", line[..index].trim_end(), REDACTED);
+            return format!("{}= \"{}\"", &line[..index], REDACTED);
         }
     }
 

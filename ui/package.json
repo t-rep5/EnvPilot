@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 1420",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tauri:build": "tauri build --bundles dmg"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.0.0",
@@ -16,5 +17,7 @@
     "react-dom": "^18.2.0",
     "lucide-react": "^0.468.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
 }

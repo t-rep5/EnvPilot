@@ -1,7 +1,7 @@
 use envpilot_core::{scan_inventory, ScanOptions};
 
 #[tauri::command]
-pub fn scan_inventory_command() -> envpilot_core::model::InventoryReport {
+fn scan_inventory_command() -> envpilot_core::model::InventoryReport {
     let home_dir = std::env::var_os("HOME")
         .map(std::path::PathBuf::from)
         .or_else(|| std::env::var_os("USERPROFILE").map(std::path::PathBuf::from))

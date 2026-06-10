@@ -18,7 +18,10 @@ fn redact_json_value_hides_sensitive_keys_recursively() {
 
     let redacted = redact_json_value(value);
     assert_eq!(redacted["token"], "[REDACTED]");
-    assert_eq!(redacted["mcpServers"]["demo"]["env"]["API_KEY"], "[REDACTED]");
+    assert_eq!(
+        redacted["mcpServers"]["demo"]["env"]["API_KEY"],
+        "[REDACTED]"
+    );
     assert_eq!(redacted["mcpServers"]["demo"]["env"]["NORMAL_FLAG"], "true");
 }
 
